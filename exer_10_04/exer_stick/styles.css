@@ -1,0 +1,9 @@
+#canvas {
+    border: solid 1px black;
+    /* position: absolute; */
+}
+
+#canvas2 {
+    border: solid 1px red;
+    /* position: relative; */
+}
