@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+}
+
+#kitties {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+
+.kitty {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: translateX(100%);
+}
+
+.kitty img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.kitty.on {
+    transform: translateX(0);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+
+.kitty.exit {
+    transform: translateX(-100%);
+    transition-property: transform;
+    transition-duration: 2s;
+}
