@@ -34,3 +34,24 @@ body {
     transition-property: transform;
     transition-duration: 2s;
 }
+
+#dots {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    bottom: 30px;
+}
+
+.dot {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px white solid;
+    margin: 0 5px;
+}
+
+.dot.on {
+    background: white;
+}
