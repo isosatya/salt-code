@@ -1,0 +1,33 @@
+* {
+    background: orange;
+}
+
+body {
+    /*display: flex;
+    justify-content: center; */
+}
+
+.resultCont {
+    display: block;
+
+    border-left: 2px dotted blue;
+    border-right: 2px dotted blue;
+    border-bottom: 2px dotted blue;
+    border-top: none;
+    visibility: hidden;
+    width: 150px;
+}
+
+.field {
+    margin-top: 200px;
+    border: 2px solid blue;
+    border-radius: 4px;
+    height: 20px;
+    width: 150px;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+.results.on {
+    background-color: grey;
+}
