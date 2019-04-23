@@ -1,3 +1,22 @@
+$.ajax({
+    url: "/data.json",
+    method: "GET",
+    // data: {
+    //     limit: 20
+    // },
+    success: function(data) {
+        console.log(data);
+
+        var html = "";
+        for (var i = 0; i < data.length; i++) {
+            html += "<a href='" + data[i].href + "'>" + data[i].text + "</a>";
+        }
+        console.log(html);
+        $("#headlines").append(html);
+        moveHeadlines();
+    }
+});
+
 var headlines = document.getElementById("headlines");
 var links = headlines.getElementsByTagName("a");
 console.log(links);
@@ -30,4 +49,4 @@ for (var j = 0; j < links.length; j++) {
     });
 }
 
-moveHeadlines();
+// moveHeadlines();
