@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.board.win {
+    /* transform: scaleX(0.5);
+    transform: scaleY(0.5); */
+    transform: rotate(10turn);
+    transition: transform all 5s;
+}
+
+.board {
+    display: inline-flex;
+}
+
+.slot {
+    width: 100px;
+    height: 100px;
+    background: #adff2f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hole {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: white;
+}
+
+.player1 {
+    background: #ff00ff;
+}
+
+.player2 {
+    background: #0000ff;
+}
