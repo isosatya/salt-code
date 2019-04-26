@@ -14,7 +14,7 @@ body {
     border-right: 2px dotted blue;
     border-bottom: 2px dotted blue;
     border-top: none;
-    visibility: hidden;
+    /* visibility: hidden; */
     width: 150px;
 }
 

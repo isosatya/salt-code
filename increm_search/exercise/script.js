@@ -7,55 +7,72 @@
             var val = input.val();
             var matches = [];
 
-            var results = $(".resultCont");
+            var results = $(".results");
 
-            var resultsHtml = "";
+            // if (val != "") {
+            //     for (var i = 0; i < countries.length; i++) {
+            //         if (
+            //             countries[i].toLowerCase().indexOf(val.toLowerCase()) ==
+            //             0
+            //         ) {
+            //             matches.push(countries[i]);
+            //             if (matches.length == 4) {
+            //                 break;
+            //             }
+            //         }
+            //     }
+            // }
 
-            if (val != "") {
-                for (var i = 0; i < countries.length; i++) {
-                    if (
-                        countries[i].toLowerCase().indexOf(val.toLowerCase()) ==
-                        0
-                    ) {
-                        matches.push(countries[i]);
-                        if (matches.length == 4) {
-                            break;
-                        }
+            $.ajax({
+                url: "https://flame-egg.glitch.me/",
+                data: {
+                    q: val
+                },
+                success: function(data) {
+                    matches = data;
+                    // console.log(matches);
+                    // console.log(matches.length);
+                    // console.log(jQuery.type(matches));
+
+                    var resultsHtml = "";
+
+                    for (var i = 0; i < matches.length; i++) {
+                        console.log("results console");
+                        results.css({ visibility: "visible" });
+                        resultsHtml +=
+                            '<div class = "results">' + matches[i] + "</div>";
+                        // console.log(resultsHtml);
                     }
+
+                    if (matches.length == 0 && val != "") {
+                        resultsHtml +=
+                            '<div class = "results">' +
+                            "No results found...!" +
+                            "</div>";
+                    }
+
+                    results.show().html(resultsHtml);
+                    // results.append(resultsHtml);
+
+                    var eachRes = $(".results");
+
+                    eachRes
+                        .on("mouseover", function(e) {
+                            if (!$(e.target).hasClass("on")) {
+                                $(e.target).addClass("on");
+                            }
+                        })
+                        .on("mouseleave", function(e) {
+                            if ($(e.target).hasClass("on")) {
+                                $(e.target).removeClass("on");
+                            }
+                        })
+                        .on("mousedown", function(e) {
+                            input.val($(e.target).text());
+                            results.css({ visibility: "hidden" });
+                        });
                 }
-            }
-
-            for (var i = 0; i < matches.length; i++) {
-                results.css({ visibility: "visible" });
-                resultsHtml +=
-                    '<div class = "results">' + matches[i] + "</div>";
-            }
-            if (matches.length == 0 && val != "") {
-                resultsHtml +=
-                    '<div class = "results">' +
-                    "No results found...!" +
-                    "</div>";
-            }
-
-            results.show().html(resultsHtml);
-
-            var eachRes = $(".results");
-
-            eachRes
-                .on("mouseover", function(e) {
-                    if (!$(e.target).hasClass("on")) {
-                        $(e.target).addClass("on");
-                    }
-                })
-                .on("mouseleave", function(e) {
-                    if ($(e.target).hasClass("on")) {
-                        $(e.target).removeClass("on");
-                    }
-                })
-                .on("mousedown", function(e) {
-                    input.val($(e.target).text());
-                    results.css({ visibility: "hidden" });
-                });
+            });
         })
         .on("keydown", function(e) {
             var resultCont = $(".resultCont");
@@ -82,6 +99,12 @@
                 }
             }
 
+            if (e.keyCode == 13) {
+                input.val(eachRes.eq(ind).text());
+
+                $(".resultCont").css({ visibility: "hidden" });
+            }
+
             if (e.keyCode == 38) {
                 if (ind == -1) {
                     eachRes.eq(length - 1).addClass("on");
@@ -100,10 +123,12 @@
             resultCont.hide();
         })
         .focus(function() {
-            console.log("FOCCCUUSSS");
+            // console.log("FOCCCUUSSS");
             input.trigger("input");
         });
-})([
+})();
+
+/*[
     "Afghanistan",
     "Albania",
     "Algeria",
@@ -327,4 +352,4 @@
     "Yemen",
     "Zambia",
     "Zimbabwe"
-]);
+]*/
