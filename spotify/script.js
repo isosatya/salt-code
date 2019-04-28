@@ -74,6 +74,7 @@
             var mousePos = scrollTop + $(window).height() - docHeight;
 
             if (mousePos + 50 >= 0) {
+                resultsHtml = "";
                 $.ajax({
                     url: nextLink,
 
