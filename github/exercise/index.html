@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+        <title>Github API</title>
+    </head>
+    <body>
+        <div class="header">
+            <img src="github_name.png" id="github_name">
+            <h1>User Repository Search</h1>
+            <img src="github_logo.png" id="github_logo">
+        </div>
+
+        <div class="fields">
+            <input type="text" name="username" placeholder="username" autocomplete="on" value="isosatya">
+            <input type="password" name="password" placeholder="password" autocomplete="on" value="Bl@ckc$ain7">
+            <input type="text" name="user-to-search" placeholder="user-to-search" autocomplete="on" value="tj">
+            <button class="submit-button">go</button>
+        </div>
+
+
+        <div class="container">
+
+        </div>
+
+        <script id="repositories" type="text/x-handlebars-template">
+            {{#repoTemp}}
+                <div
+
+                    class="element">
+
+                    <div class="avatar">
+                        <img src={{image}} alt="">
+                    </div>
+                    <div>
+                        <div class="repository" id="{{repository.id}}" >
+                            {{repository.full_name}}
+                            <div class="commits">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/repoTemp}}
+
+            {{#commitTemp}}
+
+                    <span class="text">{{this}}</span>
+
+            {{/commitTemp}}
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="script.js"></script>
+        <!-- <script src="script2.js"></script> -->
+    </body>
+</html>
