@@ -1,0 +1,104 @@
+body {
+    background: #509bf5;
+    margin: 0;
+}
+
+#logo {
+    height: 100px;
+    width: 325px;
+    background: black;
+}
+
+.result {
+    /* display: inline-flex; */
+}
+
+.input {
+    height: 200px;
+    width: 100%;
+    background: black;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input_area {
+    width: 600px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    /* margin-top: 25px; */
+    margin-left: 40px;
+}
+
+.field {
+    /* margin-top: 200px; */
+    border: 2px solid blue;
+    border-radius: 4px;
+    height: 25px;
+    width: 250px;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+#artalb {
+    margin: 20px;
+    height: 25px;
+    width: 65px;
+    font-family: "Arial";
+}
+
+#button {
+    border-radius: 4px;
+    height: 25px;
+    width: 75px;
+    background: #19e68c;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.image {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#dancer {
+    margin-right: 100px;
+}
+
+.resultsBody {
+    background-image: url(/Users/Andres/Desktop/salt-code/portfolio/projects/spotify/dancer.png);
+    background-repeat: repeat-y;
+    background-position: right top;
+    height: 600px;
+}
+
+.result {
+    z-index: 110;
+    display: flex;
+    align-content: center;
+    width: 755px;
+    border-bottom: solid #509bf5 8px;
+    background: #a2cbfd;
+}
+
+.name {
+    font-family: arial;
+    font-weight: 800;
+    height: 50px;
+    align-self: center;
+    margin-left: 75px;
+    margin-top: 18px;
+    /* background-color: white; */
+    color: #000000d6;
+    font-size: 30px;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+}
+
+.album {
+    height: 200px;
+    width: 200px;
+}

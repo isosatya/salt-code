@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+        <title>Spotify</title>
+    </head>
+    <body>
+
+    <div class="input">
+        <img src="Spotify_Logo.png" id="logo">
+        <div class="input_area">
+            <input type="text" name="spotify" value="" class="field" id="input" placeholder="Enter your Artist or Album here">
+            <select id="artalb" name="list">
+                <option value="artist">Artist</option>
+                <option value="album">Album</option>
+            </select>
+            <button name="button" type="submit" id="button">Submit</button>
+        </div>
+
+    </div>
+
+        <div class="resultsBody">
+            <div class="image">
+                <img src="dancer.png" id="dancer">
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+<script id="spotify" type="text/x-handlebars-template">
+
+{{#searchRes}}
+        <div class="result">
+            <img src= {{coverUrl}} class="album" >
+                <a class="name" href= {{link}}>{{name}}</a>
+        </div>
+{{/searchRes}}
+
+</script>
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

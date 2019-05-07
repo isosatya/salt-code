@@ -1,0 +1,31 @@
+body {
+    background-color: pink;
+}
+
+.main {
+    border: solid 5px red;
+}
+
+.partial {
+    border: solid 5px red;
+    border-radius: 10px;
+    border-style: outset;
+    margin: 8px;
+    padding: 8px;
+}
+
+#home {
+    width: 800px;
+    height: 800px;
+    font-family: arial;
+    font-size: 25px;
+}
+
+#link {
+    display: block;
+    width: 100vw;
+    font-size: 25px;
+    text-align: center;
+    font-style: italic;
+    font-weight: bolder;
+}
